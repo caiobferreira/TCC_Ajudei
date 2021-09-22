@@ -1,0 +1,45 @@
+$button-color: #F07167;
+
+.auth-container{
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 26rem;
+    height: 36rem;
+
+    
+   img{
+       width:26.5rem;
+       height:24rem;
+
+       justify-content: center;
+   }
+
+   button{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        cursor: pointer;
+    
+        background-color: $button-color;
+        width: 25.2rem;
+       height: 4.1rem;
+
+       border-radius: 10px;
+
+       margin-left: 10px;
+
+       img{
+          
+           width:40px;
+           height: 40px;
+           padding: 10px;
+       }
+   }
+}

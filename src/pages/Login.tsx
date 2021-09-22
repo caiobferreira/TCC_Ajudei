@@ -2,6 +2,9 @@ import React from 'react';
 
 import {useAuth} from '../hooks/useAuth';
 
+import ImageLogo from '../assets/images/Ajudei.svg';
+import GoogleLogo from '../assets/images/google.png';
+
 
 export function Login() {
 
@@ -10,16 +13,21 @@ export function Login() {
 async function handleSign() {
     if(!user){
         await signInWithGoogle();
-    }
-    console.log(user?.id);
-    console.log(user?.avatar);
-    console.log(user?.name);
+}
 }
 
-
+function mostrarUser(){
+    console.log(user?.id);
+    console.log(user?.avatar);
+ console.log(user?.name);
+ }
 return (
     <div className="auth-container">
-<button>Login</button>
+       <img src={ImageLogo}/>
+       <button className="auth-button">   
+           <img src={GoogleLogo}/> 
+           Faça o login com sua conta Google !
+           </button>      
 </div>
 )
 }
