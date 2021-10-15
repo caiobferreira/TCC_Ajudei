@@ -1,0 +1,55 @@
+.help-container{
+
+    width:626px;
+    height:501px;
+
+
+    margin: 0 auto;
+
+    border: 2px solid black;
+    border-radius: 20px;
+
+    textarea{
+        display: flex;
+        width: 90%;
+        height: 150px;
+
+        margin: 0 auto;
+        margin-top: 50px;   
+
+        padding: 5px;
+    }
+
+    input {
+        display: flex;
+        width: 90%;
+        height: 50px;
+
+        margin: 0 auto;
+          
+        padding: 5px;
+    }
+
+    button {
+        font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        cursor: pointer;
+    
+        background-color: $button-color;
+        width: 25.2rem;
+       height: 4.1rem;
+
+       border-radius: 10px;
+       border: 2px solid black;
+
+       margin: 0 auto;
+
+    }
+}
