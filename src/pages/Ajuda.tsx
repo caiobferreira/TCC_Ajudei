@@ -18,7 +18,7 @@ const [newHelpValue, setNewHelpValue] = useState('');
 async function handleCreateHelp(event: FormEvent) {
     event.preventDefault();
 
-    if (newHelp.trim() === ''){
+    if (newHelp.trim() === '' || newHelpValue.trim() === ''){
         return;
     }
 
@@ -36,7 +36,7 @@ async function handleCreateHelp(event: FormEvent) {
 
     })
 
-history.push(`/helps/${fireBaseHelp.key}`)
+//history.push(`/helps`)
 
 }
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {useAuth} from '../hooks/useAuth';
 
 import ImageLogo from '../assets/images/Ajudei.svg';
