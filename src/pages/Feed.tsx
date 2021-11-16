@@ -20,6 +20,9 @@ export function Feed () {
 
         return (
         <div className="help-feed">
+            <header>
+                <h1>Feed de Ajudas</h1>
+            </header>
             {helps.map(help => {
                 return (
  <Help

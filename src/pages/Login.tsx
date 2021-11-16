@@ -1,17 +1,28 @@
 import {useAuth} from '../hooks/useAuth';
+import { useHistory } from 'react-router-dom';
 
 import ImageLogo from '../assets/images/Ajudei.svg';
 import GoogleLogo from '../assets/images/google.png';
 
 
+
 export function Login() {
 
     const {user, signInWithGoogle} = useAuth();
+    const history = useHistory();
 
 async function handleSign() {
     if(!user){
         await signInWithGoogle();
 }
+}
+
+function handleFeed () {
+history.push('/helps');
+}
+
+function handleAjuda () {
+history.push('/newHelp');
 }
 
 return (
@@ -30,9 +41,13 @@ return (
            <br/>
            <span>{user?.name}</span>
            <br/>
-           <button>Quero começar a ajudar!</button>
+           <button
+           onClick={handleFeed}
+           >Quero começar a ajudar!</button>
            <br/>
-           <button>Preciso de ajuda</button>
+           <button
+           onClick={handleAjuda}
+           >Preciso de ajuda</button>
            </div>
            </>     
               )}

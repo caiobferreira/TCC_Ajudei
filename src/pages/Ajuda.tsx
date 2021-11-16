@@ -39,7 +39,7 @@ async function handleCreateHelp(event: FormEvent) {
 
     })
 
-//history.push(`/helps`)
+history.push(`/helps`)
 
 }
 

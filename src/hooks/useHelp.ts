@@ -1,8 +1,6 @@
 import {useEffect, useState} from "react";
 
 import {database} from "../services/firebase";
-import {useAuth} from "./useAuth";
-
 
 type FirebaseHelps = Record<
 string,
@@ -35,7 +33,7 @@ type HelpType = {
 
 export function useHelp () {
 
-const {user} = useAuth();
+//const {user} = useAuth();
 const [helps, setHelps] = useState<HelpType[]>([]);
 const [title, setTitle] = useState('');
 

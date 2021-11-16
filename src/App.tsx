@@ -1,5 +1,4 @@
-import React from 'react';
-
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import {Login} from "./pages/Login";
 import {Ajuda} from "./pages/Ajuda";
@@ -9,9 +8,15 @@ import {AuthContextProvider} from './contexts/AuthContext';
 
 function App() {
   return (
+    <BrowserRouter>
     <AuthContextProvider>
-      <Feed/>
+      <Switch>
+<Route path="/" exact component={Login}/>
+<Route path="/newhelp" component={Ajuda}/>
+<Route path="/helps" component={Feed}/>
+      </Switch>
     </AuthContextProvider>
+    </BrowserRouter>
   );
 }
 
