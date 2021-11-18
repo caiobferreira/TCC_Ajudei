@@ -5,6 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 
 import {database} from '../services/firebase';
 import firebase from 'firebase/compat/app';
+import { Menu } from '../components/Menu';
 
 
 export function Ajuda () {
@@ -44,7 +45,8 @@ history.push(`/helps`)
 }
 
     return (
-
+        <div>
+<Menu/>
         <div className="help-container">
             <form
             onSubmit={handleCreateHelp}
@@ -69,6 +71,7 @@ history.push(`/helps`)
                 <br/>
                 <button type="submit" disabled={!user}>Cadastre sua ajuda já!</button>             
             </form>
+        </div>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import {database} from '../services/firebase';
 import {useHelp} from '../hooks/useHelp';
 
 import {Help} from '../components/Help';
+import {Menu} from '../components/Menu';
 
 type HelpParams = {
     id: string;
@@ -19,6 +20,8 @@ export function Feed () {
     const {title, helps} = useHelp();
 
         return (
+            <div>
+                <Menu/>
         <div className="help-feed">
             <header>
                 <h1>Feed de Ajudas</h1>
@@ -37,6 +40,7 @@ export function Feed () {
  );
             })}       
            
+        </div>
         </div>
     )
 }

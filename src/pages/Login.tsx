@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import ImageLogo from '../assets/images/Ajudei.svg';
 import GoogleLogo from '../assets/images/google.png';
 
+import {Menu} from '../components/Menu';
+
 
 
 export function Login() {
@@ -26,6 +28,8 @@ history.push('/newHelp');
 }
 
 return (
+    <div>
+        <Menu/>
     <div className="auth-container">
        <img src={ImageLogo} alt="Logo"/>
        <h1>Bem vindo!</h1>
@@ -51,6 +55,7 @@ return (
            </div>
            </>     
               )}
+</div>
 </div>
 )
 }
