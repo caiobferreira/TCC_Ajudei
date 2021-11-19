@@ -45,7 +45,7 @@ history.push(`/helps`)
 }
 
     return (
-        <div>
+        <>
 <Menu/>
         <div className="help-container">
             <form
@@ -72,6 +72,6 @@ history.push(`/helps`)
                 <button type="submit" disabled={!user}>Cadastre sua ajuda já!</button>             
             </form>
         </div>
-        </div>
+        </>
     )
 }

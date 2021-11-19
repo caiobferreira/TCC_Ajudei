@@ -20,7 +20,7 @@ export function Feed () {
     const {title, helps} = useHelp();
 
         return (
-            <div>
+            <>
                 <Menu/>
         <div className="help-feed">
             <header>
@@ -41,6 +41,6 @@ export function Feed () {
             })}       
            
         </div>
-        </div>
+        </>
     )
 }

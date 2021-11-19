@@ -28,7 +28,7 @@ history.push('/newHelp');
 }
 
 return (
-    <div>
+    <>
         <Menu/>
     <div className="auth-container">
        <img src={ImageLogo} alt="Logo"/>
@@ -56,6 +56,6 @@ return (
            </>     
               )}
 </div>
-</div>
+</>
 )
 }
