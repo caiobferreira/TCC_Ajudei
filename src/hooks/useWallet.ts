@@ -12,8 +12,7 @@ type Wallet={
     type FirebaseWallet ={ 
     walletId:string;
     wallet: number;
-    }
-    ;
+    };
     
 
 

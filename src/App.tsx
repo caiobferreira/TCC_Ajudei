@@ -6,7 +6,7 @@ import {Feed} from "./pages/Feed";
 import { AddFunds } from './pages/AddFunds';
 
 import {AuthContextProvider} from './contexts/AuthContext';
-import {WalletContextProvider} from './contexts/WalletContext';
+
 
 function App() {
   return (
