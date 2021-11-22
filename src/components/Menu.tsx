@@ -9,6 +9,9 @@ export function Menu () {
     function handleFunds(){
     history.push('/addFunds');
     }
+    function handleProfile(){
+    history.push('/profile');
+    }
 
     return (
 <header>
@@ -20,7 +23,7 @@ export function Menu () {
                   <li><a >Cadastro de Ajudas</a></li>
                   <li><a >Histórico de Ajudas</a></li>
                   <li><a onClick={handleFunds}>Adicionar Fundos</a></li>
-                  <li><a >Perfil</a></li>
+                  <li><a onClick={handleProfile}>Perfil</a></li>
                 </ul>
               </nav>
 </header>
