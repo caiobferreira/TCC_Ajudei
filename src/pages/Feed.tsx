@@ -7,11 +7,8 @@ import { useHelp } from '../hooks/useHelp';
 
 import { Help } from '../components/Help';
 import { Menu } from '../components/Menu';
-import { useWallet } from "../hooks/useWallet";
+import { useWallet } from "../hooks/useWallet"
 
-type HelpParams = {
-    id: string;
-}
 
 export function Feed() {
     const { user } = useAuth();
@@ -60,7 +57,7 @@ export function Feed() {
                         }
                     }
                     return (
-                        <>
+                        
                             <Help
                                 id={help.id}
                                 content={help.content}
@@ -71,7 +68,7 @@ export function Feed() {
                             >
                             <button onClick={handleHelp}>Ajuda</button>
                             </Help>
-                        </>
+
                     );
                 })}
 

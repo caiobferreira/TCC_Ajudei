@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-import { useHelp } from '../hooks/useHelp';
-import { useWallet } from '../hooks/useWallet';
 
 import '../styles/global.scss';
 
