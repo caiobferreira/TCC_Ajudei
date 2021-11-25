@@ -156,12 +156,26 @@
 }
 
 .help-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0 auto;
+  margin-bottom: 40px;
   width: 980px;
   height: 130px;
-  padding: 15px;
-  border: 1px solid black;
-  border-radius: 10px;
+  padding: 30px;
+  border: 2px solid black;
+}
+
+.help-card button {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  border: 2px solid black;
 }
 
 a {
@@ -209,6 +223,70 @@ main {
 .nav-list li {
   letter-spacing: 3px;
   margin-left: 32px;
+}
+
+.profile-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 26rem;
+  height: 56rem;
+}
+
+.profile-container img {
+  width: 26.5rem;
+  height: 24rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 3px, 4px, 4px, 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px, 4px, 4px, 2px rgba(0, 0, 0, 0.5);
+}
+
+.profile-container h1 {
+  font-size: 26px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.profile-container .profile {
+  width: 26rem;
+  margin: 0 auto;
+  padding-top: 9rem;
+}
+
+.profile-container .profile img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 9rem;
+  height: 9rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 115px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-container .profile span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 26px;
+  font-weight: 500;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-container .wallet-container {
+  padding: 2px;
+  border: 2px solid black;
+}
+
+.profile-container .wallet-container h1 {
+  font-size: 42px;
 }
 
 * {
