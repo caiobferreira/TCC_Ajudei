@@ -1,0 +1,38 @@
+.addfunds-container{
+    width: 19.2rem;
+    height: 15rem;
+
+    margin: 0 auto;
+    margin-top: 5rem;
+
+
+
+
+    input{
+        width: 19rem;
+        height: 7rem;
+        font-size: 60px;
+    }
+
+    button{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0 25px;
+
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+            cursor: pointer;
+        
+            background-color: $button-color;
+            width: 19.2rem;
+           height: 3.1rem;
+    
+           border-radius: 10px;
+           border: 2px solid black;
+    
+       }
+}

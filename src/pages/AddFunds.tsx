@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from "react"
+
 import { Menu } from "../components/Menu";
 import { useAuth } from "../hooks/useAuth";
 import { useWallet } from "../hooks/useWallet";
@@ -67,6 +68,8 @@ export function AddFunds() {
         console.log(wallet);
         console.log(wallet?.wallet)
         console.log(newFundValue);
+        console.log('------------');
+
     }
 
 
@@ -75,14 +78,17 @@ export function AddFunds() {
             <Menu />
             <div className="addfunds-container">
                 <form onSubmit={handleAddFunds}>
-                    <input type="number"
+                    <input
+                    type="number"
+                        min="0"
                         onChange={event => setNewFund(event.target.value)}
                         value={newFund}
                     >
                     </input>
+                    <br/>
+                    <br/>
                     <button type="submit">Adicionar Fundos</button>
                 </form>
-                <button onClick={handleTeste}>Teste</button>
             </div>
         </>
     )

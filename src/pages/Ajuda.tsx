@@ -16,7 +16,6 @@ const [newHelp, setNewHelp] = useState('');
 const [newHelpValue, setNewHelpValue] = useState('');
 const [newTitle, setNewTitle] = useState ('');
 
-
 async function handleCreateHelp(event: FormEvent) {
     event.preventDefault();
 
@@ -43,7 +42,6 @@ async function handleCreateHelp(event: FormEvent) {
 history.push(`/helps`)
 
 }
-
     return (
         <>
 <Menu/>
@@ -71,6 +69,7 @@ history.push(`/helps`)
                 <br/>
                 <button type="submit" disabled={!user}>Cadastre sua ajuda já!</button>             
             </form>
+            
         </div>
         </>
     )

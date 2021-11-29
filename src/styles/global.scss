@@ -3,6 +3,7 @@
 @import 'feed';
 @import 'menu';
 @import 'profile';
+@import 'addFunds';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 $background-color: #FDFCDC;
@@ -16,8 +17,9 @@ $button-color: #F07167;
 }
 
 body {
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,0.639093137254902) 0%, rgba(144,224,239,1) 100%);
+    background: #DAE2F8; 
+    background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  
+    background: linear-gradient(to right, #D6A4A4, #DAE2F8); 
 }
 
 h1 {

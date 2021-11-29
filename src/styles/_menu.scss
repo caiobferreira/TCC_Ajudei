@@ -19,12 +19,12 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #23232e;
-  height: 7.5vh;
+  background: $button-color;
+  height: 7.9vh;
 }
 
 main {
-  height: 92vh;
+  height: 100vh;
 }
 
 .nav-list {

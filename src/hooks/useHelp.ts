@@ -56,8 +56,15 @@ const parsedHelps = Object.entries(firebaseHelps).map(
         }
     }
 );
-setTitle(databaseHelp.title);
-setHelps(parsedHelps);
+if(parsedHelps){
+
+    setTitle(databaseHelp.title);
+    setHelps(parsedHelps);
+}
+if(!parsedHelps){
+    setTitle('');
+    setHelps([]);
+}
 });
 
 return () => {
