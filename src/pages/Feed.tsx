@@ -42,9 +42,7 @@ export function Feed() {
     function closeModal() {
         modalIsOpen(false);
     }
-    function afterModalIsOpen() {
-        console.log('olá');
-    }
+   
 
 
 
@@ -60,9 +58,7 @@ export function Feed() {
                     helps.map(help => {
 
                         async function handleHelp() {
-                            console.log('função');
-                            console.log(wallet?.wallet);
-                            console.log(help.valor);
+                           
 
                             if (wallet?.wallet === undefined) {
                                 console.log('undefined')
@@ -76,7 +72,7 @@ export function Feed() {
                                     wallet: helpNewValue
                                 })
 
-                                console.log(helpNewValue);
+                                modalIsOpen(false);
                                 return;
                             }
                             if (wallet.wallet < help.valor) {
@@ -103,13 +99,12 @@ export function Feed() {
 
                                 <Modal
                                     isOpen={setModalIsOpen}
-                                    onAfterOpen={afterModalIsOpen}
                                     onRequestClose={closeModal}
                                     style={customStyles}
-                                    contentLabel="Teste"
+                                    contentLabel="Confirme sua ajuda"
                                 >
                                     <p>Você deseja ajudar o valor de R${help.valor} ?</p>
-                                    <button>Sim</button>
+                                    <button onClick={handleHelp}>Sim</button>
                                     <button onClick={closeModal}>Não</button>
                                 </Modal>
 
