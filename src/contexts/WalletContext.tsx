@@ -27,9 +27,10 @@ type Wallet={
         const {user} = useAuth();
         const [wallet, setWallet] = useState<Wallet>();
         const userId = user?.id;
+
         
-        
-            useEffect(() => {
+        useEffect(() => {
+                
                 const walletRef = database.ref('wallets/' + userId);
                     walletRef.on('value', async (snapshot) => {
                     const databaseWallet = snapshot.val();

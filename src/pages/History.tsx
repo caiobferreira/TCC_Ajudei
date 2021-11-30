@@ -23,7 +23,7 @@ export function History() {
 
 
                         function handleIsHelped() {
-                            if (help.isHelped === false) {
+                            if (help.isHelped === true) {
                                 console.log(help.isHelped);
 
                                 return (
@@ -34,15 +34,13 @@ export function History() {
                                         title={help.title}
                                         valor={help.valor}
                                         createdAt={help.createdAt}
+                                        isHelped={help.isHelped}
                                     >
-                                        <button disabled>Ajudado!</button>
                                     </Help>
                                 )
                             }
                         }
 
-                        const timestamp = help.createdAt;
-                        const parsedDate = new Date(timestamp);
 
                         return (
 

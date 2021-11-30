@@ -1,8 +1,10 @@
 import {useHistory} from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 
 export function Menu () {
     const history = useHistory();
+    const {user} = useAuth();
     function handleHome(){
     history.push('/');
     }
@@ -30,10 +32,13 @@ export function Menu () {
                 <ul className="nav-list">
                   <li><a onClick={handleHome}>Início</a></li>
                   <li><a onClick={handleFeed}>Feed de Ajudas</a></li>
+                  {user &&(<>
                   <li><a onClick={handleNewHelp}>Cadastro de Ajudas</a></li>
                   <li><a onClick={handleHistory}>Histórico de Ajudas</a></li>
                   <li><a onClick={handleFunds}>Adicionar Fundos</a></li>
                   <li><a onClick={handleProfile}>Perfil</a></li>
+                  </>
+                  )}         
                 </ul>
               </nav>
 </header>

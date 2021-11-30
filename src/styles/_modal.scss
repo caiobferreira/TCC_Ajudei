@@ -1,0 +1,53 @@
+.modal {
+    width: 20rem;
+    height: 15rem;
+    margin: 0 auto;
+    margin-top: 30vh;
+
+    padding: 15px;
+    
+
+    border: 2px solid black;
+
+    background: rgba($button-color, 0.95);
+
+    align-items: center;
+
+    
+    p{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 32px;
+        
+    }
+    button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        cursor: pointer;
+    
+        background-color: $button-color;
+        width: 10.2rem;
+       height: 4.1rem;
+
+       border-radius: 10px;
+       border: 2px solid black;
+       padding: 10px;
+margin: 0 auto;
+
+    }
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+}

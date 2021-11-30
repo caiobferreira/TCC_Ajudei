@@ -1,49 +1,13 @@
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useWallet } from "../hooks/useWallet"
 import { useHelp } from '../hooks/useHelp';
-import { useAuth } from '../hooks/useAuth';
-
-import { database } from '../services/firebase';
 
 import { Help } from '../components/Help';
 import { Menu } from '../components/Menu';
-import Modal from 'react-modal';
 
-const customStyles = {
-    content: {
-        width: '20rem',
-        height: '5.5rem',
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-    },
-};
 
 export function Feed() {
-    const { user } = useAuth();
-    const userId = user?.id;
-    const history = useHistory();
 
     const { helps } = useHelp();
-    const { wallet } = useWallet();
 
-    const walletRef = database.ref('wallets/' + userId);
-
-    const [setModalIsOpen, modalIsOpen] = useState(false);
-    const [setIsHelped, isHelped] = useState(false);
-
-    function openModal() {
-        modalIsOpen(true);
-    }
-
-    function closeModal() {
-        modalIsOpen(false);
-    }
-   
 
 
 
@@ -58,74 +22,44 @@ export function Feed() {
                 {helps ? (
                     helps.map(help => {
 
-                        async function handleHelp() {
-                           
 
-                            if (wallet?.wallet === undefined) {
-                                console.log('undefined')
-                                return;
-                            }
-                            if (wallet.wallet >= help.valor) {
-                                const helpNewValue = Number(wallet.wallet) - Number(help.valor);
 
-                                const fireBaseWallet = await walletRef.set({
-                                    walletId: user?.id,
-                                    wallet: helpNewValue
-                                })
 
-                                modalIsOpen(false);
-                                return;
-                            }
-                            if (wallet.wallet < help.valor) {
-                                history.push('/addFunds');
+                        function handleIsHelped() {
+
+
+                            if (help.isHelped === false) {
+
+                                return (
+                                    <Help
+                                        id={help.id}
+                                        content={help.content}
+                                        author={help.author}
+                                        title={help.title}
+                                        valor={help.valor}
+                                        createdAt={help.createdAt}
+                                        isHelped={help.isHelped}
+                                    >
+                                    </Help>
+                                )
                             }
                         }
-                         function handleIsHelped(){
-                             if (help.isHelped === false){
-                                 console.log(help.isHelped);
 
-                                 return(
-                                    <Help
-                                    id={help.id}
-                                    content={help.content}
-                                    author={help.author}
-                                    title={help.title}
-                                    valor={help.valor}
-                                    createdAt={help.createdAt}
-                                >
-                                    <button onClick={openModal}>Ajuda</button>
-                                </Help>
-                                 )
-                             }
-                         }
 
-                        const timestamp = help.createdAt;
-                        const parsedDate = new Date(timestamp);
+
 
                         return (
-                           
+
                             <>
 
-                               {handleIsHelped()}
-
-                                <Modal
-                                    isOpen={setModalIsOpen}
-                                    onRequestClose={closeModal}
-                                    style={customStyles}
-                                    contentLabel="Confirme sua ajuda"
-                                >
-                                    <p>Você deseja ajudar o valor de R${help.valor} ?</p>
-                                    <button onClick={handleHelp}>Sim</button>
-                                    <button onClick={closeModal}>Não</button>
-                                </Modal>
-
+                                {handleIsHelped()}
 
                             </>
 
                         );
 
                     }).reverse()
-                    
+
                 ) : (<>
                     <h1>Cadastre sua ajuda e comece ajudar!</h1>
                     <h1>:)</h1>
@@ -134,6 +68,6 @@ export function Feed() {
 
             </div>
         </>
-                
+
     )
 }

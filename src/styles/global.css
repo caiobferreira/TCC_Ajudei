@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 26rem;
-  height: 56rem;
+  height: 35rem;
 }
 
 .auth-container img {
@@ -335,6 +335,56 @@ main {
   height: 3.1rem;
   border-radius: 10px;
   border: 2px solid black;
+}
+
+.modal {
+  width: 20rem;
+  height: 15rem;
+  margin: 0 auto;
+  margin-top: 30vh;
+  padding: 15px;
+  border: 2px solid black;
+  background: rgba(240, 113, 103, 0.95);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.modal button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  background-color: #F07167;
+  width: 10.2rem;
+  height: 4.1rem;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 * {

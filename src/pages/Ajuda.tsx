@@ -54,18 +54,21 @@ history.push(`/helps`)
                 placeholder="Escreva um titulo para sua ajuda"
                 onChange={event => setNewTitle(event.target.value)}
                 value={newTitle}
+                required
                 />
                 <br/>
                 <textarea
                 placeholder="Escreva aqui em que você precisa ser ajudado"
                 onChange={event => setNewHelp(event.target.value)}
                 value={newHelp}
+                required
                 />
                 <br/>
                 <input type="number"
                 placeholder="Insira o valor da sua necessidade"
                 onChange={event => setNewHelpValue(event.target.value)}
                 value={newHelpValue}
+                required
                 />
                 <br/>
                 <button type="submit" disabled={!user}>Cadastre sua ajuda já!</button>             

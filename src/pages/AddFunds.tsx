@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react"
+import { FormEvent, useState } from "react"
 import{useHistory} from 'react-router-dom';
 
 import { useAuth } from "../hooks/useAuth";
@@ -9,18 +9,6 @@ import Modal from 'react-modal';
 
 import { database } from "../services/firebase";
 
-type Fund = {
-    walletId: string;
-    wallet: number;
-}
-
-type FirebaseWallet = Record<
-    string,
-    {
-        walletId: string;
-        wallet: number;
-    }
->;
 
 export function AddFunds() {
     const { user } = useAuth();
@@ -29,22 +17,9 @@ export function AddFunds() {
     const userId = user?.id;
 
     const [newFund, setNewFund] = useState('');
-    //const [newFundValue, setNewFundValue] = useState(0);
 
     const [setModalIsOpen, modalIsOpen] = useState(false);
 
-    const customStyles = {
-        content: {
-            width: '20rem',
-            height: '5.5rem',
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
-    };
     
 
     function openModal() {
@@ -65,19 +40,28 @@ export function AddFunds() {
         const walletRef = database.ref('wallets/' + userId);
 
         // verificação se carteira é existente
+        
+        if (wallet?.wallet === undefined) {
+    
+            const fireBaseWallet = await walletRef.set({
+                walletId: user?.id,
+                wallet: 0
+            })
+            return;
+        }
+        
         if (walletRef.key === userId) {
+            
             if (wallet?.wallet === undefined) {
-
+    
                 const fireBaseWallet = await walletRef.set({
                     walletId: user?.id,
                     wallet: 0
                 })
                 return;
             }
-
             if (wallet.wallet === 0 || wallet.wallet > 0) {
                 const walletValue = Number(wallet.wallet) + Number(newFund);
-                //setNewFundValue(walletValue);
 
                 const fireBaseWallet = await walletRef.set({
                     walletId: user?.id,
@@ -90,7 +74,8 @@ export function AddFunds() {
 
 
     }
-
+    
+    Modal.setAppElement('#root');
 
 
 
@@ -112,12 +97,15 @@ export function AddFunds() {
                     <Modal
                                     isOpen={setModalIsOpen}
                                     onRequestClose={closeModal}
-                                    style={customStyles}
+                                    className="modal"
                                     contentLabel="Fundos adicionados"
+                                    overlayClassName="overlay"
                                 >
                                     <p>R${newFund} foi adicionado a sua carteira!</p>
+                                    <br/>
                                     <button onClick={closeModal}>Ir para feed do Ajudei!</button>
                                 </Modal>
+                                
                 </form>
             </div>
            
