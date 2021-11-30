@@ -11,6 +11,7 @@ author : {
     avatar: string;
 };
 content: string;
+isHelped: boolean;
 createdAt: string;
 id: string;
 title: string;
@@ -26,6 +27,7 @@ type HelpType = {
         avatar: string;
     };
     content:string;
+    isHelped: boolean;
     title: string;
     valor: number;
     createdAt: string;
@@ -50,6 +52,7 @@ const parsedHelps = Object.entries(firebaseHelps).map(
             id: key,
             content: value.content,
             author: value.author,
+            isHelped: value.isHelped,
             title: value.title,
             valor: value.valor,
             createdAt: value.createdAt,

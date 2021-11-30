@@ -34,6 +34,7 @@ export function Feed() {
     const walletRef = database.ref('wallets/' + userId);
 
     const [setModalIsOpen, modalIsOpen] = useState(false);
+    const [setIsHelped, isHelped] = useState(false);
 
     function openModal() {
         modalIsOpen(true);
@@ -79,14 +80,12 @@ export function Feed() {
                                 history.push('/addFunds');
                             }
                         }
+                         function handleIsHelped(){
+                             if (help.isHelped === false){
+                                 console.log(help.isHelped);
 
-
-                        const timestamp = help.createdAt;
-                        const parsedDate = new Date(timestamp);
-
-                        return (
-                            <>
-                                <Help
+                                 return(
+                                    <Help
                                     id={help.id}
                                     content={help.content}
                                     author={help.author}
@@ -96,6 +95,18 @@ export function Feed() {
                                 >
                                     <button onClick={openModal}>Ajuda</button>
                                 </Help>
+                                 )
+                             }
+                         }
+
+                        const timestamp = help.createdAt;
+                        const parsedDate = new Date(timestamp);
+
+                        return (
+                           
+                            <>
+
+                               {handleIsHelped()}
 
                                 <Modal
                                     isOpen={setModalIsOpen}
@@ -114,6 +125,7 @@ export function Feed() {
                         );
 
                     }).reverse()
+                    
                 ) : (<>
                     <h1>Cadastre sua ajuda e comece ajudar!</h1>
                     <h1>:)</h1>
@@ -122,5 +134,6 @@ export function Feed() {
 
             </div>
         </>
+                
     )
 }

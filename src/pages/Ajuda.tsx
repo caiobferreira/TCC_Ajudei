@@ -30,6 +30,7 @@ async function handleCreateHelp(event: FormEvent) {
         title: newTitle,
         content:newHelp,
         valor: newHelpValue,
+        isHelped: false,
         createdAt: firebase.database.ServerValue.TIMESTAMP,
         author:{
             name: user?.name,
