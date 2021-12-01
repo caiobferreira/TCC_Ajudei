@@ -302,6 +302,29 @@ main {
   font-size: 42px;
 }
 
+.profile-container button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  background-color: #F07167;
+  width: 26.2rem;
+  height: 4.1rem;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+
 .addfunds-container {
   width: 19.2rem;
   height: 15rem;

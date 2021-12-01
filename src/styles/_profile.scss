@@ -67,4 +67,26 @@
        }
        
    }
+
+   button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        cursor: pointer;
+    
+        background-color: $button-color;
+        width: 26.2rem;
+       height: 4.1rem;
+
+       border-radius: 10px;
+       border: 2px solid black;
+
+margin: 0 auto
+   }
 }

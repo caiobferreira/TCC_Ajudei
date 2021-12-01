@@ -90,7 +90,7 @@ export function Help({
                 <p>R$: {valor}</p>
                 <br />
                 <p>{date}</p>
-                <button onClick={openModal} disabled={isHelped}>{!isHelped ? 'AJUDAR' : 'AJUDADO'}</button>
+                <button onClick={openModal} disabled={isHelped || !user}>{!isHelped ? 'AJUDAR' : 'AJUDADO'}</button>
 
                 <Modal
                                     isOpen={setModalIsOpen}
