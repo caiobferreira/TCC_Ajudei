@@ -24,7 +24,9 @@
 
 .auth-container .logged {
   width: 26rem;
+  height: 100%;
   margin: 0 auto;
+  padding-top: 4rem;
 }
 
 .auth-container .logged img {
@@ -54,7 +56,7 @@
 }
 
 .auth-container button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
   padding: 0 22px;
@@ -68,7 +70,7 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  background-color: #F07167;
+  background-color: #f07167;
   width: 25.2rem;
   height: 4.1rem;
   border-radius: 10px;
@@ -124,7 +126,7 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  background-color: #F07167;
+  background-color: #f07167;
   width: 25.2rem;
   height: 4.1rem;
   border-radius: 10px;
@@ -168,7 +170,7 @@
   width: 55rem;
   height: 10rem;
   padding: 10px;
-  border: 3px solid #F07167;
+  border: 3px solid #f07167;
   border-radius: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -182,9 +184,25 @@
   font-weight: 500;
   width: 20rem;
   height: 3rem;
-  background-color: #F07167;
+  background-color: #f07167;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+@media (max-width: 1400px) {
+  .help-card body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100vw;
+  }
+  .help-card body header {
+    width: 90%;
+  }
+  .help-card .help-feed {
+    overflow-x: hidden;
+    width: 100vw;
+  }
 }
 
 a {
@@ -214,7 +232,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #F07167;
+  background: #f07167;
   height: 7.9vh;
 }
 
@@ -232,6 +250,16 @@ main {
 .nav-list li {
   letter-spacing: 3px;
   margin-left: 32px;
+}
+
+@media (max-width: 1280px) {
+  header {
+    overflow-x: hidden;
+    width: 99%;
+  }
+  header nav {
+    width: 99%;
+  }
 }
 
 .profile-container {
@@ -292,7 +320,7 @@ main {
 .profile-container .wallet-container {
   margin: 0 auto;
   margin-top: 5px;
-  border: 2px solid #F07167;
+  border: 2px solid #f07167;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -317,7 +345,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  background-color: #F07167;
+  background-color: #f07167;
   width: 26.2rem;
   height: 4.1rem;
   border-radius: 10px;
@@ -353,7 +381,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  background-color: #F07167;
+  background-color: #f07167;
   width: 19.2rem;
   height: 3.1rem;
   border-radius: 10px;
@@ -393,7 +421,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  background-color: #F07167;
+  background-color: #f07167;
   width: 10.2rem;
   height: 4.1rem;
   border-radius: 10px;
@@ -424,5 +452,9 @@ body {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 /*# sourceMappingURL=global.css.map */

@@ -83,11 +83,14 @@ export function AddFunds() {
         <>
             <Menu />
             <div className="addfunds-container">
+                <h1>Adicione fundos a sua carteira de forma rápida e simples!</h1>
+                <br/>
                 <form onSubmit={handleAddFunds}>
                     <input
                         type="number"
                         min="0"
                         onChange={event => setNewFund(event.target.value)}
+                        placeholder="R$"
                         value={newFund}
                     >
                     </input>

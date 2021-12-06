@@ -4,8 +4,10 @@ import { useHistory } from 'react-router-dom';
 import ImageLogo from '../assets/images/Ajudei.svg';
 import GoogleLogo from '../assets/images/google.png';
 
+import {database} from '../services/firebase';
+
 import {Menu} from '../components/Menu';
-import { useEffect } from 'react';
+import { useWallet } from '../hooks/useWallet';
 
 
 
@@ -13,10 +15,24 @@ export function Login() {
 
     const {user, signInWithGoogle} = useAuth();
     const history = useHistory();
+    const {wallet} = useWallet();
+    const userId = user?.id;
+    const walletRef = database.ref('wallets/' + userId);
+
+
 
 async function handleSign() {
     if(!user){
         await signInWithGoogle();
+}
+if(user){
+    if(wallet?.wallet === undefined){
+const fireBaseWallet = await walletRef.set({
+                walletId: user?.id,
+                wallet: 0
+            })
+            return;
+    }
 }
 }
 
@@ -32,7 +48,12 @@ return (
     <>
         <Menu/>
     <div className="auth-container">
-       <img src={ImageLogo} alt="Logo"/>
+        {!user ? (
+            <img src={ImageLogo} alt="Logo"/>
+        ):(
+            <br/>
+        )}
+       
        <h1>Bem vindo!</h1>
        { !user ? (
             <button className="auth-button" onClick={handleSign}>   
